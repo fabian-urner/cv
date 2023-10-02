@@ -30,3 +30,37 @@ h6 {
   background-color: goldenrod;
   padding: 15px;
 }
+
+article + article {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: black 2px dashed;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  margin: 30px;
+}
+
+nav * + * {
+  margin-left: 40px;
+}
+
+nav a {
+  border: solid teal 1px;
+  padding: 4px;
+  color: black;
+}
+
+nav a:hover {
+  background-color: teal;
+  color: goldenrod;
+}
+
+nav a:active {
+  background-color: goldenrod;
+  color: teal;
+}
