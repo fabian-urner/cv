@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+body {
+  margin: 0px;
+  font-family: "Jetbrains Mono Condensed", "Courier New", Courier, monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+}
+
+.main {
+  padding: 16px;
+}
+
+#overall-header {
+  text-align: center;
+  background-color: goldenrod;
+  padding: 15px;
+}
