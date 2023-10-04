@@ -23,6 +23,10 @@ a {
   text-decoration: none;
 }
 
+article {
+  position: sticky;
+}
+
 ::selection {
   background-color: teal;
   color: white;
@@ -78,4 +82,24 @@ a {
 .nav-link:active {
   background-color: goldenrod;
   color: teal;
+}
+
+.main h2 {
+  position: relative;
+  left: -10px;
+}
+
+.badge {
+  height: 150px;
+  width: 150px;
+  padding: 62px 0;
+  text-align: center;
+  background-color: teal;
+  color: beige;
+  font: 24px "Roboto", sans-serif;
+  position: absolute;
+  top: 140px;
+  right: 350px;
+  border-radius: 50%;
+  transform: rotate(30deg);
 }
