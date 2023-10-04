@@ -64,3 +64,12 @@ nav a:active {
   background-color: goldenrod;
   color: teal;
 }
+
+::selection {
+  background-color: teal;
+  color: white;
+}
+
+#profession::after {
+  content: " 🤓";
+}
