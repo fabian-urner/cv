@@ -2,14 +2,12 @@
   box-sizing: border-box;
 }
 
-main {
-  max-width: 800px;
-  margin: 0 auto;
+html {
+  font-family: "Jetbrains Mono Condensed", "Courier New", Courier, monospace;
 }
 
 body {
   margin: 0px;
-  font-family: "Jetbrains Mono Condensed", "Courier New", Courier, monospace;
 }
 
 h1,
@@ -21,48 +19,8 @@ h6 {
   font-family: "Roboto", sans-serif;
 }
 
-.main {
-  padding: 16px;
-}
-
-#overall-header {
-  text-align: center;
-  background-color: goldenrod;
-  padding: 15px;
-}
-
-article + article {
-  margin-top: 40px;
-  padding-top: 40px;
-  border-top: black 2px dashed;
-}
-
 a {
   text-decoration: none;
-}
-
-nav {
-  margin: 30px;
-}
-
-nav * + * {
-  margin-left: 40px;
-}
-
-nav a {
-  border: solid teal 1px;
-  padding: 4px;
-  color: black;
-}
-
-nav a:hover {
-  background-color: teal;
-  color: goldenrod;
-}
-
-nav a:active {
-  background-color: goldenrod;
-  color: teal;
 }
 
 ::selection {
@@ -70,6 +28,50 @@ nav a:active {
   color: white;
 }
 
-#profession::after {
+/* Specific Styling */
+
+.main {
+  max-width: 800px;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.profession::after {
   content: " 🤓";
+}
+
+.main-header {
+  text-align: center;
+  background-color: goldenrod;
+  padding: 15px;
+}
+
+.main > * + * {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: black 2px dashed;
+}
+
+.top-nav {
+  padding: 30px;
+}
+
+.nav-link + .nav-link {
+  margin-left: 40px;
+}
+
+.nav-link {
+  border: solid teal 1px;
+  padding: 4px 8px;
+  color: black;
+}
+
+.nav-link:hover {
+  background-color: teal;
+  color: goldenrod;
+}
+
+.nav-link:active {
+  background-color: goldenrod;
+  color: teal;
 }
