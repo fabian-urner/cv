@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
-  outline: solid red 1px;
+  _outline: solid red 1px;
 }
 
 html {
   font-family: "Jetbrains Mono Condensed", "Courier New", Courier, monospace;
-  font-size: 16;
+  font-size: 18px;
 }
 
 body {
@@ -19,14 +19,11 @@ h4,
 h5,
 h6 {
   font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
 a {
   text-decoration: none;
-}
-
-article {
-  position: sticky;
 }
 
 ::selection {
@@ -35,42 +32,54 @@ article {
 }
 
 /* Specific Styling */
+.badge {
+  padding: 0.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: teal;
+  color: beige;
+  font: 1.6rem "Roboto", sans-serif;
+}
 
-.main {
-  max-width: 70ch;
-  margin: auto;
-  padding-top: 2rem;
+.main-header {
+  text-align: center;
+  background-color: goldenrod;
+}
+
+.header-title {
+  font-size: 2rem;
+}
+
+.header-title > h1 {
+  display: inline-block;
+  padding-top: 2.8rem;
+  font-size: 1em;
+}
+
+.header-title > p {
+  padding: 0 1.4rem;
+  font-size: 0.4em;
 }
 
 .profession::after {
   content: " 🤓";
 }
 
-.main-header {
-  text-align: center;
-  background-color: goldenrod;
-  padding: 0.5rem;
-}
-
-.main > * + * {
-  margin-top: 2rem;
-  padding-top: 2rem;
-  border-top: black 0.1rem dashed;
-  position: relative;
-}
-
 .top-nav {
-  padding: 1.5rem;
-}
-
-.nav-link + .nav-link {
-  margin-left: 2rem;
+  padding: 0.9rem;
 }
 
 .nav-link {
+  font-size: 1rem;
+  display: inline-block;
   border: solid teal 1px;
-  padding: 0.2rem 0.4rem;
+  margin-bottom: 0.6rem;
   color: black;
+  padding: 0.5rem;
+}
+
+.nav-link + .nav-link {
+  margin-left: 0.2rem;
 }
 
 .nav-link:hover {
@@ -78,43 +87,95 @@ article {
   color: goldenrod;
 }
 
-.section-header > * {
-  display: inline;
-}
-
 .nav-link:active {
   background-color: goldenrod;
   color: teal;
 }
 
-.main h2 {
+.main {
+  max-width: 32ch;
+  margin: auto;
+  padding-top: 1.5rem;
+}
+
+.main > * + * {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: black 0.12rem dashed;
   position: relative;
-  left: -0.5rem;
 }
 
-.header-title {
-  font-size: 3.5rem;
+.main h2 {
+  font-size: 1.4rem;
+  position: relative;
+  left: -0.4rem;
 }
 
-.header-title > h1 {
-  font-size: 1em;
+.main h3 {
+  font-size: 1rem;
 }
 
-.header-title > p {
-  font-size: 0.25em;
+.section-header > * {
+  display: inline-block;
+  margin-top: 1rem;
 }
 
-.badge {
-  height: 7.5rem;
-  width: 7.5rem;
-  padding: 3.1rem 0;
-  text-align: center;
-  background-color: teal;
-  color: beige;
-  font: 1.2rem "Roboto", sans-serif;
-  position: absolute;
-  top: 2rem;
-  right: 2rem;
-  border-radius: 50%;
-  transform: rotate(30deg);
+.kontakt {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.kontakt a {
+  color: teal;
+}
+
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 20px;
+  }
+
+  .badge {
+    height: 7.5rem;
+    width: 7.5rem;
+    padding: 3.1rem 0;
+    font: 1.2rem "Roboto", sans-serif;
+
+    top: 0.4rem;
+    left: calc(50vw + 11rem);
+    border-radius: 50%;
+    transform: rotate(30deg);
+
+    position: fixed;
+  }
+
+  .main {
+    max-width: 60ch;
+  }
+
+  .main > * + * {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  html {
+    font-size: 20px;
+  }
+
+  .badge {
+    left: calc(50vw + 16rem);
+  }
+  .main {
+    max-width: 76ch;
+  }
+
+  .main > * + * {
+    margin-top: 4rem;
+  }
+}
+
+@media print {
+  .badge {
+    display: none;
+  }
 }
