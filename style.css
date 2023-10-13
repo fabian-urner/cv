@@ -50,8 +50,8 @@ a {
   color: var(--color-text-accent);
 }
 
-.badge:hover {
-  --gradiant-badge: var(--gradiant-badge-invert);
+.badge:hover span {
+  background-image: var(--gradiant-badge-invert);
 }
 
 .badge span {
@@ -104,7 +104,7 @@ a {
   border: solid var(--color-accent) 1px;
   color: var(--color-text);
   padding: 0.5rem;
-  transition: background-color 0.5s, color 0.3s;
+  transition: background 0.5s, color 0.3s;
 }
 
 .top-nav > * + * {
@@ -199,6 +199,15 @@ a {
     transform: rotate(30deg);
 
     position: fixed;
+    transition: transform 0.5s;
+  }
+
+  .badge:hover {
+    transform: scale(1.2) rotate(40deg);
+  }
+
+  .main-header:focus-within .badge {
+    transform: scale(1.2) rotate(40deg);
   }
 
   .top-nav {
