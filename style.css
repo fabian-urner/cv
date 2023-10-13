@@ -1,15 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@800&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap");
+
 * {
   box-sizing: border-box;
   _outline: solid red 1px;
 }
 
-html {
+:root {
   font-family: "Jetbrains Mono Condensed", "Courier New", Courier, monospace;
   font-size: 18px;
+  --color-text: #222;
+  --color-primery: goldenrod;
+  --color-secondary: ivory;
+  --color-accent: teal;
+  --color-text-accent: beige;
 }
 
 body {
   margin: 0;
+  color: var(--color-text);
+  background-color: var(--color-secondary);
 }
 
 h1,
@@ -27,23 +36,31 @@ a {
 }
 
 ::selection {
-  background-color: teal;
-  color: white;
+  background-color: var(--color-accent);
+  color: var(--color-text-accent);
 }
 
 /* Specific Styling */
 .badge {
   padding: 0.6rem;
   text-align: center;
+  background-color: var(--color-accent);
+  color: var(--color-text-accent);
+}
+
+.badge span {
+  font: 1.4rem "Inter", sans-serif;
   text-transform: uppercase;
-  background-color: teal;
-  color: beige;
-  font: 1.6rem "Roboto", sans-serif;
+  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .main-header {
   text-align: center;
-  background-color: goldenrod;
+  background-color: var(--color-primery);
+  margin-bottom: 1rem;
 }
 
 .header-title {
@@ -51,9 +68,12 @@ a {
 }
 
 .header-title > h1 {
-  display: inline-block;
-  padding-top: 2.8rem;
-  font-size: 1em;
+  width: 6ch;
+  margin: auto;
+  padding-top: 2rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 4rem;
 }
 
 .header-title > p {
@@ -75,8 +95,8 @@ a {
 .nav-link {
   font-size: 1rem;
   display: inline-block;
-  border: solid teal 1px;
-  color: black;
+  border: solid var(--color-accent) 1px;
+  color: var(--color-text);
   padding: 0.5rem;
 }
 
@@ -85,13 +105,13 @@ a {
 }
 
 .nav-link:hover {
-  background-color: teal;
-  color: goldenrod;
+  background-color: var(--color-accent);
+  color: var(--color-primery);
 }
 
 .nav-link:active {
-  background-color: goldenrod;
-  color: teal;
+  background-color: var(--color-primery);
+  color: var(--color-accent);
 }
 
 .main {
@@ -103,7 +123,7 @@ a {
 .main > * + * {
   margin-top: 2rem;
   padding-top: 2rem;
-  border-top: black 0.12rem dashed;
+  border-top: var(--color-text) 0.12rem dashed;
   position: relative;
 }
 
@@ -137,7 +157,7 @@ a {
 }
 
 .kontakt a {
-  color: teal;
+  color: var(--color-accent);
 }
 
 @media screen and (min-width: 786px) {
@@ -148,11 +168,10 @@ a {
   .badge {
     height: 7.5rem;
     width: 7.5rem;
-    padding: 3.1rem 0;
-    font: 1.2rem "Roboto", sans-serif;
+    padding: 3rem 0;
 
     top: 0.4rem;
-    left: calc(50vw + 11rem);
+    left: calc(50vw + 14rem);
     border-radius: 50%;
     transform: rotate(30deg);
 
@@ -168,12 +187,16 @@ a {
     flex-direction: row;
   }
 
+  .top-nav {
+    padding: 1.4rem;
+  }
+
   .top-nav > * + * {
     margin: 0 0.4rem;
   }
 
   .main {
-    max-width: 60ch;
+    max-width: 67ch;
   }
 
   .main > * + * {
@@ -194,6 +217,11 @@ a {
   .badge {
     left: calc(50vw + 16rem);
   }
+
+  .header-title > h1 {
+    width: 20ch;
+  }
+
   .main {
     max-width: 76ch;
   }
@@ -206,5 +234,23 @@ a {
 @media print {
   .badge {
     display: none;
+  }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --color-text: beige;
+    --color-primery: #222;
+    --color-secondary: #282828;
+    --color-accent: goldenrod;
+    --color-text-accent: beige;
+  }
+
+  .badge span {
+    background-image: linear-gradient(
+      90deg,
+      rgba(63, 94, 251, 1) 0%,
+      rgba(252, 70, 107, 1) 100%
+    );
   }
 }
