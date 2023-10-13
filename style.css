@@ -13,6 +13,8 @@
   --color-secondary: ivory;
   --color-accent: teal;
   --color-text-accent: beige;
+  --gradiant-badge: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  --gradiant-badge-invert: linear-gradient(45deg, #fffb7d 0%, #85ffbd 100%);
 }
 
 body {
@@ -48,10 +50,14 @@ a {
   color: var(--color-text-accent);
 }
 
+.badge:hover {
+  --gradiant-badge: var(--gradiant-badge-invert);
+}
+
 .badge span {
   font: 1.4rem "Inter", sans-serif;
   text-transform: uppercase;
-  background-image: linear-gradient(45deg, #85ffbd 0%, #fffb7d 100%);
+  background-image: var(--gradiant-badge);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -98,6 +104,7 @@ a {
   border: solid var(--color-accent) 1px;
   color: var(--color-text);
   padding: 0.5rem;
+  transition: background-color 0.5s, color 0.3s;
 }
 
 .top-nav > * + * {
@@ -105,6 +112,11 @@ a {
 }
 
 .nav-link:hover {
+  background-color: var(--color-accent);
+  color: var(--color-primery);
+}
+
+.nav-link:focus {
   background-color: var(--color-accent);
   color: var(--color-primery);
 }
@@ -158,6 +170,17 @@ a {
 
 .kontakt a {
   color: var(--color-accent);
+}
+
+.main-footer {
+  display: flex;
+  background-color: var(--color-primery);
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+  font-size: 0.6rem;
+  margin-bottom: 0;
+  width: 100%;
 }
 
 @media screen and (min-width: 786px) {
@@ -244,13 +267,15 @@ a {
     --color-secondary: #282828;
     --color-accent: goldenrod;
     --color-text-accent: beige;
-  }
-
-  .badge span {
-    background-image: linear-gradient(
+    --gradiant-badge: linear-gradient(
       90deg,
       rgba(63, 94, 251, 1) 0%,
       rgba(252, 70, 107, 1) 100%
+    );
+    --gradiant-badge-invert: linear-gradient(
+      90deg,
+      rgba(252, 70, 107, 1) 0%,
+      rgba(63, 94, 251, 1) 100%
     );
   }
 }
